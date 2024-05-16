@@ -1,8 +1,10 @@
-import pygame, sys
+import classes, constants, pygame, sys
 
 pygame.init()
-screen = pygame.display.set_mode((400,500))
+screen = pygame.display.set_mode((constants.GRID_SIZE,constants.GRID_SIZE))
 clock = pygame.time.Clock()
+
+fruit = classes.FRUIT()
 
 while True:
     for event in pygame.event.get():
@@ -11,5 +13,6 @@ while True:
             sys.exit()
             
     screen.fill((175,215,70))
+    fruit.drawFruit(screen)
     pygame.display.update()
     clock.tick(60)
